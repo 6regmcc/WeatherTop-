@@ -6,15 +6,13 @@
 #{list items:stations, as:'station'}
 
 <section class="ui segment">
-  #{latestreadings test:station/}
+
   <h2 class="ui header" id="${station.id}">
     ${station.name}
+    <a href="stations/${station.id}"> View </a>
   </h2>
 
-  <div>
-  #{readings test:station/}
-  #{addreading test:station/}
-  </div>
+
 </section>
 
 #{/list}

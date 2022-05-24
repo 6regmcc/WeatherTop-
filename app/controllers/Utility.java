@@ -13,7 +13,7 @@ public class Utility extends Controller {
         Station currentstation = Station.findById(id);
         currentstation.readings.add(reading);
         currentstation.save();
-        redirect ("/dashboard#" + id );
+        redirect ("stationview.html", currentstation);
     }
 
 }

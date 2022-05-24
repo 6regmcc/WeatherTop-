@@ -1,3 +1,4 @@
+
 <table class="ui fixed table">
     <thead>
     <tr>
@@ -8,24 +9,24 @@
     </tr>
     </thead>
     <tbody>
+    #{list items:_station.readings, as:'reading'}
+             <tr>
+                 <td>
+                     ${reading.code}
 
-        #{list items:_test.readings, as:'reading'}
-            <tr>
-                <td>
-                    ${reading.code}
+                 </td>
+                 <td>
+                     ${reading.temperature}
+                 </td>
+                 <td>
 
-                </td>
-                <td>
-                    ${reading.temperature}
-                </td>
-                <td>
+                     ${reading.windSpeed}
+                 </td>
+                 <td>
+                     ${reading.pressure}
+                 </td>
+             </tr>
 
-                    ${reading.windSpeed}
-                </td>
-                <td>
-                    ${reading.pressure}
-                </td>
-            </tr>
+            </tbody>
         #{/list}
-    </tbody>
-</table>
+        </table>
