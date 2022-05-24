@@ -5,7 +5,7 @@
 
 <section class="ui segment">
     #{list items:station, as:'station'}
-    #{latestreadings test:station/}
+    #{if ( station.readings.size() > 0)}#{latestreadings test:station/}#{/if}
     #{readings station:station/}
     #{addreading test:station/}
     <div>
