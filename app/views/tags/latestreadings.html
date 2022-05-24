@@ -1,0 +1,83 @@
+<div class="ui five cards">
+    <div class="card">
+        <div class="content">
+            <img class="right floated mini ui image" src="/images/avatar/large/elliot.jpg">
+            <div class="header">
+                #{list items:_test, as:'station'}
+                ${station.name}
+                #{/list}
+            </div>
+            <div class="meta">
+                text goes here
+            </div>
+            <div class="description">
+                text goes here
+            </div>
+        </div>
+    </div>
+    #{list items:_test.readings.get(_test.readings.size()-1), as:'reading'}
+    <div class="card">
+        <div class="content">
+            <img class="right floated mini ui image" src="/images/avatar/large/elliot.jpg">
+            <div class="header">
+                Weather
+            </div>
+            <div class="meta">
+                text goes here
+            </div>
+            <div class="description">
+                ${reading.code}
+            </div>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="content">
+            <img class="right floated mini ui image" src="/images/avatar/large/elliot.jpg">
+            <div class="header">
+                Temp
+            </div>
+            <div class="meta">
+                text goes here
+            </div>
+            <div class="description">
+                ${reading.temperature} C<br>
+                ${reading.fahrenheitTemp} F
+            </div>
+        </div>
+    </div>
+
+
+    <div class="card">
+        <div class="content">
+            <img class="right floated mini ui image" src="/images/avatar/large/elliot.jpg">
+            <div class="header">
+                Wind
+            </div>
+            <div class="meta">
+                text goes here
+            </div>
+            <div class="description">
+                ${reading.windSpeed}
+                <br>
+                ${reading.beaufort} bft
+            </div>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="content">
+            <img class="right floated mini ui image" src="/images/avatar/large/elliot.jpg">
+            <div class="header">
+                Pressure
+            </div>
+            <div class="meta">
+                text goes here
+            </div>
+            <div class="description">
+                ${reading.pressure}
+            </div>
+        </div>
+    </div>
+    #{/list}
+</div>

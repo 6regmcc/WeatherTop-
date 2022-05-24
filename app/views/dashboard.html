@@ -1,0 +1,21 @@
+#{extends 'main.html' /}
+#{set title:'Dashboard' /}
+
+#{menu id:"dashboard"/}
+
+#{list items:stations, as:'station'}
+
+<section class="ui segment">
+  #{latestreadings test:station/}
+  <h2 class="ui header" id="${station.id}">
+    ${station.name}
+  </h2>
+
+  <div>
+  #{readings test:station/}
+  #{addreading test:station/}
+  </div>
+</section>
+
+#{/list}
+
