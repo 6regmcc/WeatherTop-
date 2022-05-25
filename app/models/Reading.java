@@ -17,14 +17,15 @@ public class Reading extends Model{
     public int beaufort;
 
     public double windChill;
+    public int windDirection;
 
 
-    public Reading(int code, double temperature, double windSpeed, int pressure) {
+    public Reading(int code, double temperature, double windSpeed, int pressure, int windDirection) {
         this.code = code;
         this.temperature = temperature;
         this.windSpeed = windSpeed;
         this.pressure = pressure;
-
+        this.windDirection = windDirection;
     }
 
     public void setFahrenheitTemp(){

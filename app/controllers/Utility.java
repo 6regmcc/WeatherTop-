@@ -7,9 +7,9 @@ import static play.mvc.Controller.redirect;
 
 public class Utility extends Controller {
 
-    public static void addReading(Long id, int code, double temperature, double windSpeed, int pressure)
+    public static void addReading(Long id, int code, double temperature, double windSpeed, int pressure,int windDirection)
     {
-        Reading reading = new Reading(code,temperature,windSpeed,pressure);
+        Reading reading = new Reading(code,temperature,windSpeed,pressure,windDirection);
         Station currentstation = Station.findById(id);
         currentstation.readings.add(reading);
         currentstation.save();
