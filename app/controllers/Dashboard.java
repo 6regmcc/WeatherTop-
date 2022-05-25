@@ -20,6 +20,7 @@ public class Dashboard extends Controller
       for(Reading reading :station.readings){
         reading.setFahrenheitTemp();
         reading.setBeaufort();
+        reading.setWindChill();
         reading.save();
       }
     }
