@@ -21,6 +21,7 @@ public class Dashboard extends Controller
         reading.setFahrenheitTemp();
         reading.setBeaufort();
         reading.setWindChill();
+        reading.setCardinalPoint();
         reading.save();
       }
     }

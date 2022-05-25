@@ -18,6 +18,7 @@ public class Reading extends Model{
 
     public double windChill;
     public int windDirection;
+    public String cardinalPoint;
 
 
     public Reading(int code, double temperature, double windSpeed, int pressure, int windDirection) {
@@ -66,6 +67,45 @@ public class Reading extends Model{
         df.setRoundingMode(RoundingMode.CEILING);
         this.windChill = Double.parseDouble(df.format(windChill.doubleValue()));
     }
+
+    public void setCardinalPoint(){
+        if (this.windDirection > 348.75 || this.windDirection < 11.25){
+            this.cardinalPoint = "North";
+        }else if (this.windDirection > 11.25 && this.windDirection < 33.75){
+            this.cardinalPoint = "North-Northeast";
+        }else if (this.windDirection > 33.75 && this.windDirection < 56.25){
+            this.cardinalPoint = "Northeast";
+        }else if (this.windDirection > 56.25 && this.windDirection < 78.75){
+            this.cardinalPoint = "East-Northeast";
+        }else if (this.windDirection > 78.75 && this.windDirection < 101.25){
+            this.cardinalPoint = "East";
+        }else if (this.windDirection > 101.25 && this.windDirection < 123.75){
+            this.cardinalPoint = "East-Southeast";
+        }else if (this.windDirection > 123.75 && this.windDirection < 146.25){
+            this.cardinalPoint = "Southeast";
+        }else if (this.windDirection > 146.25 && this.windDirection < 168.75){
+            this.cardinalPoint = "South-Southeast";
+        }else if (this.windDirection > 168.75 && this.windDirection < 191.25){
+            this.cardinalPoint = "South";
+        }else if (this.windDirection > 191.25 && this.windDirection < 213.75){
+            this.cardinalPoint = "South-Southwest";
+        }else if (this.windDirection > 213.75 && this.windDirection < 236.25){
+            this.cardinalPoint = "Southwest";
+        }else if (this.windDirection > 236.25 && this.windDirection < 258.75){
+            this.cardinalPoint = "West-Southwest";
+        }else if (this.windDirection > 258.75 && this.windDirection < 281.25){
+            this.cardinalPoint = "West";
+        }else if (this.windDirection > 281.25 && this.windDirection < 303.75){
+            this.cardinalPoint = "West-Northwest";
+        }else if (this.windDirection > 303.75 && this.windDirection < 326.25){
+            this.cardinalPoint = "Northwest";
+        }else if (this.windDirection > 326.25 && this.windDirection < 384.75 ){
+            this.cardinalPoint = "North-Northwest";
+        }else{
+            this.cardinalPoint = "ERROR";
+        }
+    }
+
 
 
 
