@@ -17,6 +17,9 @@ public class Stationview extends Controller
         for(Reading reading :station.readings){
             reading.setFahrenheitTemp();
             reading.setBeaufort();
+            reading.setWindChill();
+            reading.setCardinalPoint();
+            reading.setWeatherCodeIcon();
             reading.save();
         }
 

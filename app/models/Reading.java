@@ -19,6 +19,7 @@ public class Reading extends Model{
     public double windChill;
     public int windDirection;
     public String cardinalPoint;
+    public String weatherCodeIcon;
 
 
     public Reading(int code, double temperature, double windSpeed, int pressure, int windDirection) {
@@ -107,8 +108,15 @@ public class Reading extends Model{
     }
 
 
-
-
+    public void setWeatherCodeIcon(){
+        if(this.code == 100){
+            this.weatherCodeIcon = "";
+        }else if(this.code == 200){
+            this.weatherCodeIcon = "cloud sun icon";
+        }else if(this.code == 300){
+            this.weatherCodeIcon = "cloud icon";
+        }
+    }
 
 
 
