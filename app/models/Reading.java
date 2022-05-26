@@ -110,12 +110,23 @@ public class Reading extends Model{
 
     public void setWeatherCodeIcon(){
         if(this.code == 100){
-            this.weatherCodeIcon = "";
+            this.weatherCodeIcon = "sun icon";
         }else if(this.code == 200){
             this.weatherCodeIcon = "cloud sun icon";
         }else if(this.code == 300){
             this.weatherCodeIcon = "cloud icon";
+        }else if(this.code == 400){
+            this.weatherCodeIcon = "cloud sun rain icon";
+        }else if(this.code == 500){
+            this.weatherCodeIcon = "cloud showers heavy icon";
+        }else if(this.code == 600){
+            this.weatherCodeIcon = "cloud rain icon";
+        }else if(this.code == 700){
+            this.weatherCodeIcon = "snowflake icon";
+        }else if(this.code == 800){
+            this.weatherCodeIcon = "bolt icon";
         }
+
     }
 
 
