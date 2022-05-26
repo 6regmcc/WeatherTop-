@@ -9,7 +9,7 @@
 <section class="ui segment">
 
   <h2 class="ui header" id="${station.id}">
-    ${station.name}
+    #{if ( stations.size() > 0)}#${station.name}#{/if}
     <a href="stations/${station.id}"> View </a>
   </h2>
 
