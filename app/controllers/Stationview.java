@@ -12,7 +12,12 @@ public class Stationview extends Controller
     public static void index(Long id)
     {
         Station station = Station.findById(id);
-
+        station.setMinTemperature();
+        station.setMaxTemperature();
+        station.setMinWindSpeed();
+        station.setMaxWindSpeed();
+        station.setMinPressure();
+        station.setMaxPressure();
 
         for(Reading reading :station.readings){
             reading.setFahrenheitTemp();
