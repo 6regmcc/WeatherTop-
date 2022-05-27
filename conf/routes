@@ -15,6 +15,9 @@ POST   /register                                Accounts.register
 POST   /authenticate                            Accounts.authenticate
 GET    /logout                                  Accounts.logout
 
+GET    /user                                    UpdateUser.index
+POST  /user/{id}/updateemail                    UpdateUser.updateEmail
+
 POST    /stations/{id}/addreading               Stationview.addReading
 GET     /stations/{id}/deletereading/{readingid}     Stationview.deleteReading
 
