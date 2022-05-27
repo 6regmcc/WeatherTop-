@@ -20,12 +20,15 @@ public class Dashboard extends Controller
     Logger.info("stations is " + stations);
 
     for(Station station : stations){
-      station.setMinTemperature();
-      station.setMaxTemperature();
-      station.setMinWindSpeed();
-      station.setMaxWindSpeed();
-      station.setMinPressure();
-      station.setMaxPressure();
+      if(station.readings.size() > 0) {
+        station.setMinTemperature();
+        station.setMaxTemperature();
+        station.setMinWindSpeed();
+        station.setMaxWindSpeed();
+        station.setMinPressure();
+        station.setMaxPressure();
+      }
+
       for(Reading reading :station.readings){
         reading.setFahrenheitTemp();
         reading.setBeaufort();

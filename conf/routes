@@ -15,6 +15,7 @@ POST   /authenticate                            Accounts.authenticate
 GET    /logout                                  Accounts.logout
 
 POST    /stations/{id}/addreading               Stationview.addReading
+GET     /stations/{id}/deletereading/{readingid}     Stationview.deleteReading
 
 GET     /stations/{id}                          Stationview.index
 

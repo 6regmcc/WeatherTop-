@@ -12,12 +12,14 @@ public class Stationview extends Controller
     public static void index(Long id)
     {
         Station station = Station.findById(id);
-        station.setMinTemperature();
-        station.setMaxTemperature();
-        station.setMinWindSpeed();
-        station.setMaxWindSpeed();
-        station.setMinPressure();
-        station.setMaxPressure();
+        if(station.readings.size() > 0) {
+            station.setMinTemperature();
+            station.setMaxTemperature();
+            station.setMinWindSpeed();
+            station.setMaxWindSpeed();
+            station.setMinPressure();
+            station.setMaxPressure();
+        }
 
         for(Reading reading :station.readings){
             reading.setFahrenheitTemp();
@@ -40,6 +42,20 @@ public class Stationview extends Controller
         currentstation.save();
         redirect ("/stations/" + id);
     }
+
+    public static void deleteReading(Long id, long readingid)
+    {
+
+        Station currentstation = Station.findById(id);
+        Reading reading = Reading.findById(readingid);
+        Logger.info ("Removing" + reading +  " " + readingid);
+        currentstation.readings.remove(reading);
+        currentstation.save();
+        reading.delete();
+        redirect ("/stations/" + id);
+    }
+
+
 }
 
 
