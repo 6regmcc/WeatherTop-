@@ -9,8 +9,11 @@
 <section class="ui segment">
 
   <h2 class="ui header" id="${station.id}">
-    #{if ( stations.size() > 0)}#${station.name}#{/if}
-    <a href="stations/${station.id}"> View </a>
+    #{if ( stations.size() > 0)}${station.name}#{/if}
+    <br>
+    <div>
+    <a href="stations/${station.id}" class="ui icon button"><i class="folder open outline icon"></i></a><a href="/dashboard/deletestation/${station.id}" class="ui icon button"><i class="right floated trash alternate outline icon"></i></a>
+    </div>
   </h2>
 
 
