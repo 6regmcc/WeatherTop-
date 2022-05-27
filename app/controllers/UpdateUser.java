@@ -15,8 +15,9 @@ public class UpdateUser extends Controller {
     }
 
     public static void updateEmail(long id, String email){
-        Member member  = Member.findById(id);
+        Member member  = Accounts.getLoggedInMember();
         member.email = email;
+        member.save();
         Logger.info("this method was called" + id + email );
         redirect("/user");
     }
