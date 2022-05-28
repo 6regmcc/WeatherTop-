@@ -22,11 +22,17 @@ public class Station extends Model {
     public double maxWindSpeed;
     public double minPressure;
     public double maxPressure;
+    public String temperatureTrendingValue;
+    public String windTrendingValue;
+    public String pressureTrendingValue;
 
     public Station(String name, double latitude, double longitude){
         this.name = name;
         this.latitude = latitude;
         this.longitude = longitude;
+
+
+
     }
 
     public void setMinTemperature(){
@@ -80,6 +86,36 @@ public class Station extends Model {
             if(reading.pressure > this.maxPressure ){
                 this.maxPressure = reading.pressure;
             }
+        }
+    }
+
+    public void setTemperatureTrendingValue(){
+
+        this.temperatureTrendingValue = "no trend";
+        if(readings.size() >= 4){
+            double mostRecentTemp = readings.get(readings.size()-1).temperature;
+            double secondMostRecentTemp = readings.get(readings.size()-2).temperature;
+            double thirdMostRecentTemp = readings.get(readings.size()-3).temperature;
+            double forthMostRecentTemp = readings.get(readings.size()-4).temperature;
+            if(mostRecentTemp > secondMostRecentTemp && secondMostRecentTemp > thirdMostRecentTemp && thirdMostRecentTemp > forthMostRecentTemp){
+                this.temperatureTrendingValue = "trending up";
+            }else if(mostRecentTemp < secondMostRecentTemp && secondMostRecentTemp < thirdMostRecentTemp && thirdMostRecentTemp < forthMostRecentTemp){
+                this.temperatureTrendingValue = "trending down";
+            }
+        }
+    }
+
+    public void setWindTrendingValue(){
+        this.windTrendingValue = "no trend";
+        if(readings.size() >= 3){
+
+        }
+    }
+
+    public void setPressureTrendingValue(){
+        this.pressureTrendingValue = "no trend";
+        if(readings.size() >= 3){
+
         }
     }
 

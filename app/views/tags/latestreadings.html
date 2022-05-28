@@ -50,7 +50,8 @@
                 ${reading.fahrenheitTemp} F<br>
                 #{list items:_test, as:'station'}
                 Min ${station.minTemperature}<br>
-                Max ${station.maxTemperature}
+                Max ${station.maxTemperature}<br>
+                Trend ${station.temperatureTrendingValue}
                 #{/list}
             </div>
         </div>
@@ -80,6 +81,8 @@
                 Min ${station.minWindSpeed}
                 <br>
                 Max ${station.maxWindSpeed}
+                <br>
+                Trend ${station.WindTrendingValue}
                 #{/list}
             </div>
         </div>
@@ -102,6 +105,8 @@
                 Min ${station.minPressure}
                 <br>
                 Max ${station.maxPressure}
+                <br>
+                Trend ${station.PressureTrendingValue}
                 #{/list}
             </div>
         </div>

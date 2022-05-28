@@ -19,6 +19,9 @@ public class Stationview extends Controller
             station.setMaxWindSpeed();
             station.setMinPressure();
             station.setMaxPressure();
+            station.setTemperatureTrendingValue();
+            station.setWindTrendingValue();
+            station.setPressureTrendingValue();
         }
 
         for(Reading reading :station.readings){
