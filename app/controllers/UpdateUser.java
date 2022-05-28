@@ -14,11 +14,27 @@ public class UpdateUser extends Controller {
         render("user.html", member);
     }
 
-    public static void updateEmail(long id, String email){
+    public static void updateUser(long id, String email, String password, String firstname, String lastname){
         Member member  = Accounts.getLoggedInMember();
-        member.email = email;
+        if(!"".equals(email)){
+            member.email = email;
+            Logger.info("updated email address to "  + email );
+        }
+        if(!"".equals(password)){
+            member.password = password;
+            Logger.info("updated password to "  + "*******" );
+        }
+        if(!"".equals(firstname)){
+            member.firstname = firstname;
+            Logger.info("updated firstname to "  + firstname );
+        }
+        if(!"".equals(lastname)){
+            member.lastname = lastname;
+            Logger.info("updated lastname to "  + lastname );
+        }
+
         member.save();
-        Logger.info("this method was called" + id + email );
+        Logger.info("user update method was called" + id + email );
         redirect("/user");
     }
 }
