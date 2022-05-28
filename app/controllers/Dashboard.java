@@ -17,6 +17,7 @@ public class Dashboard extends Controller
     Member member = Accounts.getLoggedInMember();
     Logger.info("logged in member is " + member);
     List<Station> stations = member.stations;
+    
     Logger.info("stations is " + stations);
 
     for(Station station : stations){
