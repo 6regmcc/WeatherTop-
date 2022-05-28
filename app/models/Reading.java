@@ -9,6 +9,7 @@ import java.text.DecimalFormat;
 
 @Entity
 public class Reading extends Model{
+    public String date;
     public int code;
     public double temperature;
     public double windSpeed;
@@ -22,7 +23,8 @@ public class Reading extends Model{
     public String weatherCodeIcon;
 
 
-    public Reading(int code, double temperature, double windSpeed, int pressure, int windDirection) {
+    public Reading(String date,int code, double temperature, double windSpeed, int pressure, int windDirection) {
+        this.date = date;
         this.code = code;
         this.temperature = temperature;
         this.windSpeed = windSpeed;

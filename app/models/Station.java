@@ -91,46 +91,46 @@ public class Station extends Model {
 
     public void setTemperatureTrendingValue(){
 
-        this.temperatureTrendingValue = "no trend";
+        this.temperatureTrendingValue = "right floated blue big window minimize outline icon";
         if(readings.size() >= 4){
             double mostRecentTemp = readings.get(readings.size()-1).temperature;
             double secondMostRecentTemp = readings.get(readings.size()-2).temperature;
             double thirdMostRecentTemp = readings.get(readings.size()-3).temperature;
             double forthMostRecentTemp = readings.get(readings.size()-4).temperature;
             if(mostRecentTemp > secondMostRecentTemp && secondMostRecentTemp > thirdMostRecentTemp && thirdMostRecentTemp > forthMostRecentTemp){
-                this.temperatureTrendingValue = "trending up";
+                this.temperatureTrendingValue = "right floated green arrow up icon";
             }else if(mostRecentTemp < secondMostRecentTemp && secondMostRecentTemp < thirdMostRecentTemp && thirdMostRecentTemp < forthMostRecentTemp){
-                this.temperatureTrendingValue = "trending down";
+                this.temperatureTrendingValue = "right floated red arrow down icon";
             }
         }
     }
 
     public void setWindTrendingValue(){
-        this.windTrendingValue = "no trend";
+        this.windTrendingValue = "right floated blue big window minimize outline icon";
         if(readings.size() >= 4){
             double mostRecentWind = readings.get(readings.size()-1).windSpeed;
             double secondMostRecentWind = readings.get(readings.size()-2).windSpeed;
             double thirdMostRecentWind = readings.get(readings.size()-3).windSpeed;
             double forthMostRecentWind = readings.get(readings.size()-4).windSpeed;
             if(mostRecentWind > secondMostRecentWind && secondMostRecentWind > thirdMostRecentWind && thirdMostRecentWind > forthMostRecentWind){
-                this.windTrendingValue = "trending up";
+                this.windTrendingValue = "right floated green arrow up icon";
             }else if(mostRecentWind < secondMostRecentWind && secondMostRecentWind < thirdMostRecentWind && thirdMostRecentWind < forthMostRecentWind){
-                this.windTrendingValue = "trending down";
+                this.windTrendingValue = "right floated red arrow down icon";
             }
         }
     }
 
     public void setPressureTrendingValue(){
-        this.pressureTrendingValue = "no trend";
+        this.pressureTrendingValue = "right floated blue big window minimize outline icon";
         if(readings.size() >= 4){
             double mostRecentPressure = readings.get(readings.size()-1).pressure;
             double secondMostRecentPressure = readings.get(readings.size()-2).pressure;
             double thirdMostRecentPressure = readings.get(readings.size()-3).pressure;
             double forthMostRecentPressure = readings.get(readings.size()-4).pressure;
             if(mostRecentPressure > secondMostRecentPressure && secondMostRecentPressure > thirdMostRecentPressure && thirdMostRecentPressure > forthMostRecentPressure){
-                this.pressureTrendingValue = "trending up";
+                this.pressureTrendingValue = "right floated green arrow up icon";
             }else if(mostRecentPressure < secondMostRecentPressure && secondMostRecentPressure < thirdMostRecentPressure && thirdMostRecentPressure < forthMostRecentPressure){
-                this.pressureTrendingValue = "trending down";
+                this.pressureTrendingValue = "right floated red arrow down icon";
             }
         }
     }

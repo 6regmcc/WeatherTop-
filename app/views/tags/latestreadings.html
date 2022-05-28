@@ -49,9 +49,11 @@
                 ${reading.temperature} C<br>
                 ${reading.fahrenheitTemp} F<br>
                 #{list items:_test, as:'station'}
+                <i class="${station.temperatureTrendingValue}"></i>
+                #{/list}
+                #{list items:_test, as:'station'}
                 Min ${station.minTemperature}<br>
                 Max ${station.maxTemperature}<br>
-                Trend ${station.temperatureTrendingValue}
                 #{/list}
             </div>
         </div>
@@ -61,6 +63,7 @@
     <div class="card">
         <div class=" content">
             <i class="right floated huge teal wind icon"></i>
+
             <br>
             <div class="header">
                 Wind
@@ -70,9 +73,13 @@
             </div>
             <div class="description">
                 ${reading.windSpeed}
+
                 <br>
                 ${reading.beaufort} bft
                 <br>
+                #{list items:_test, as:'station'}
+                <i class="${station.windTrendingValue}"></i>
+                #{/list}
                 ${reading.cardinalPoint}
                 <br>
                 ${reading.windChill}
@@ -82,7 +89,6 @@
                 <br>
                 Max ${station.maxWindSpeed}
                 <br>
-                Trend ${station.WindTrendingValue}
                 #{/list}
             </div>
         </div>
@@ -105,8 +111,10 @@
                 Min ${station.minPressure}
                 <br>
                 Max ${station.maxPressure}
+                #{list items:_test, as:'station'}
+                <i class="${station.pressureTrendingValue}"></i>
+                #{/list}
                 <br>
-                Trend ${station.PressureTrendingValue}
                 #{/list}
             </div>
         </div>
