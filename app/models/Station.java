@@ -107,15 +107,31 @@ public class Station extends Model {
 
     public void setWindTrendingValue(){
         this.windTrendingValue = "no trend";
-        if(readings.size() >= 3){
-
+        if(readings.size() >= 4){
+            double mostRecentWind = readings.get(readings.size()-1).windSpeed;
+            double secondMostRecentWind = readings.get(readings.size()-2).windSpeed;
+            double thirdMostRecentWind = readings.get(readings.size()-3).windSpeed;
+            double forthMostRecentWind = readings.get(readings.size()-4).windSpeed;
+            if(mostRecentWind > secondMostRecentWind && secondMostRecentWind > thirdMostRecentWind && thirdMostRecentWind > forthMostRecentWind){
+                this.windTrendingValue = "trending up";
+            }else if(mostRecentWind < secondMostRecentWind && secondMostRecentWind < thirdMostRecentWind && thirdMostRecentWind < forthMostRecentWind){
+                this.windTrendingValue = "trending down";
+            }
         }
     }
 
     public void setPressureTrendingValue(){
         this.pressureTrendingValue = "no trend";
-        if(readings.size() >= 3){
-
+        if(readings.size() >= 4){
+            double mostRecentPressure = readings.get(readings.size()-1).pressure;
+            double secondMostRecentPressure = readings.get(readings.size()-2).pressure;
+            double thirdMostRecentPressure = readings.get(readings.size()-3).pressure;
+            double forthMostRecentPressure = readings.get(readings.size()-4).pressure;
+            if(mostRecentPressure > secondMostRecentPressure && secondMostRecentPressure > thirdMostRecentPressure && thirdMostRecentPressure > forthMostRecentPressure){
+                this.pressureTrendingValue = "trending up";
+            }else if(mostRecentPressure < secondMostRecentPressure && secondMostRecentPressure < thirdMostRecentPressure && thirdMostRecentPressure < forthMostRecentPressure){
+                this.pressureTrendingValue = "trending down";
+            }
         }
     }
 
