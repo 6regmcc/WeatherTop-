@@ -5,11 +5,13 @@ import play.db.jpa.Model;
 import java.lang.Math;
 import java.math.RoundingMode;
 import java.text.DecimalFormat;
+import java.time.LocalDateTime;
+import java.util.Date;
 
 
 @Entity
 public class Reading extends Model{
-    public String date;
+    public Date date;
     public int code;
     public double temperature;
     public double windSpeed;
@@ -23,8 +25,8 @@ public class Reading extends Model{
     public String weatherCodeIcon;
 
 
-    public Reading(String date,int code, double temperature, double windSpeed, int pressure, int windDirection) {
-        this.date = date;
+    public Reading(int code, double temperature, double windSpeed, int pressure, int windDirection) {
+        this.date = new Date(System.currentTimeMillis());
         this.code = code;
         this.temperature = temperature;
         this.windSpeed = windSpeed;
@@ -128,10 +130,5 @@ public class Reading extends Model{
         }else if(this.code == 800){
             this.weatherCodeIcon = "bolt icon";
         }
-
     }
-
-
-
-
 }
