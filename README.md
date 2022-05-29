@@ -1,5 +1,6 @@
-# play-template-1
+# Weather Top
 
-This is a sample starter project for this course:
+Greg Mc Carthy
+Student Number 20099889
 
-- [Web Development](https://tutors-design.netlify.com/course/wit-hdip-comp-sci-2020-web-development.netlify.com)
+- [Web Development](http://nameless-spire-79916.herokuapp.com/)
