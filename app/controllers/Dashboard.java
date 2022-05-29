@@ -31,6 +31,7 @@ public class Dashboard extends Controller
         station.setTemperatureTrendingValue();
         station.setWindTrendingValue();
         station.setPressureTrendingValue();
+        station.parseLatitudeLongitude();
       }
 
       for(Reading reading :station.readings){

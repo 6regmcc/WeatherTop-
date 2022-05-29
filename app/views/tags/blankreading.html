@@ -8,11 +8,13 @@
             <div class="header">
                 #{list items:_test, as:'station'}
                 ${station.name}
-                #{/list}
             </div>
             <div class="meta">
             </div>
             <div class="description">
+                Lat: ${station.latitude}<br>
+                Lng: ${station.longitude}
+                #{/list}
             </div>
         </div>
     </div>

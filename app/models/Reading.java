@@ -23,7 +23,7 @@ public class Reading extends Model{
     public int windDirection;
     public String cardinalPoint;
     public String weatherCodeIcon;
-
+    public String weatherCodeText;
 
     public Reading(int code, double temperature, double windSpeed, int pressure, int windDirection) {
         this.date = new Date(System.currentTimeMillis());
@@ -32,6 +32,7 @@ public class Reading extends Model{
         this.windSpeed = windSpeed;
         this.pressure = pressure;
         this.windDirection = windDirection;
+
     }
 
     public void setFahrenheitTemp(){
@@ -115,20 +116,28 @@ public class Reading extends Model{
     public void setWeatherCodeIcon(){
         if(this.code == 100){
             this.weatherCodeIcon = "sun icon";
+            this.weatherCodeText = "Clear";
         }else if(this.code == 200){
             this.weatherCodeIcon = "cloud sun icon";
+            this.weatherCodeText = "Partial clouds";
         }else if(this.code == 300){
             this.weatherCodeIcon = "cloud icon";
+            this.weatherCodeText = "Cloudy";
         }else if(this.code == 400){
             this.weatherCodeIcon = "cloud sun rain icon";
+            this.weatherCodeText = "Light Showers";
         }else if(this.code == 500){
             this.weatherCodeIcon = "cloud showers heavy icon";
+            this.weatherCodeText = "Heavy Showers";
         }else if(this.code == 600){
             this.weatherCodeIcon = "cloud rain icon";
+            this.weatherCodeText = "Rain";
         }else if(this.code == 700){
             this.weatherCodeIcon = "snowflake icon";
+            this.weatherCodeText = "Snow";
         }else if(this.code == 800){
             this.weatherCodeIcon = "bolt icon";
+            this.weatherCodeText = "Thunder";
         }
     }
 }

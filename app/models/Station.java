@@ -1,5 +1,7 @@
 package models;
 
+import java.math.RoundingMode;
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -135,6 +137,10 @@ public class Station extends Model {
         }
     }
 
-
-
+    public void parseLatitudeLongitude(){
+        DecimalFormat df = new DecimalFormat("000.###");
+        df.setRoundingMode(RoundingMode.CEILING);
+        this.latitude = Double.parseDouble(df.format(this.latitude));
+        this.longitude = Double.parseDouble(df.format(this.longitude));
+    }
 }
