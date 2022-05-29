@@ -74,12 +74,4 @@ public class Dashboard extends Controller
 }
 
 
-/*
 
-{
-    Logger.info("Rendering Dasboard");
-    Member member = Accounts.getLoggedInMember();
-    List<Playlist> playlists = member.playlists;
-    render ("dashboard.html", playlists);
-  }
- */
