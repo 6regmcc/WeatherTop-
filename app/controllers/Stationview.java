@@ -58,14 +58,4 @@ public class Stationview extends Controller
         reading.delete();
         redirect ("/stations/" + id);
     }
-
-
 }
-
-
-
-/*
-Playlist playlist = Playlist.findById(id);
-    Logger.info ("Playlist id = " + id);
-    render("playlist.html", playlist);
- */

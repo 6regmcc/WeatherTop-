@@ -1,13 +1,11 @@
 package models;
 import javax.persistence.Entity;
-
 import play.db.jpa.Model;
 import java.lang.Math;
 import java.math.RoundingMode;
 import java.text.DecimalFormat;
 import java.time.LocalDateTime;
 import java.util.Date;
-
 
 @Entity
 public class Reading extends Model{
@@ -18,7 +16,6 @@ public class Reading extends Model{
     public int pressure;
     public double fahrenheitTemp;
     public int beaufort;
-
     public double windChill;
     public int windDirection;
     public String cardinalPoint;
@@ -111,7 +108,6 @@ public class Reading extends Model{
             this.cardinalPoint = "ERROR";
         }
     }
-
 
     public void setWeatherCodeIcon(){
         if(this.code == 100){
